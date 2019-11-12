@@ -8,25 +8,25 @@
  *  @copyright      Copyright (c) Steeve Andrian Salim
  */
 
-import "o2system-venus-ui/src/main";
-import "./theme.scss";
-const Pace = require('pace-js-amd-fix');
+import 'o2system-venus-ui/src/main'
+import './theme.scss'
 
-Pace.start();
+import Vue from 'vue'
 
-import Vue from 'vue';
-window.Vue = Vue;
+import Theme from './theme.vue'
+import Router from '../../config/router'
+import vbclass from 'vue-body-class'
+import { VuePageTransition } from 'vue-page-transition'
+const Pace = require('pace-js-amd-fix')
 
-import Theme from './theme.vue';
-import Router from "../../config/router";
-import vbclass from 'vue-body-class';
-import { VuePageTransition } from "vue-page-transition";
+Pace.start()
+window.Vue = Vue
 
-Vue.component('VuePageTransition', VuePageTransition);
+Vue.component('VuePageTransition', VuePageTransition)
 
-Vue.use(vbclass, Router, VuePageTransition);
+Vue.use(vbclass, Router, VuePageTransition)
 
 new Vue({
-    render: h => h(Theme),
-    router: Router,
-}).$mount('#app');
+  render: h => h(Theme),
+  router: Router
+}).$mount('#app')
